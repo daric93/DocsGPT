@@ -154,12 +154,14 @@ class ValkeyStore(BaseVectorStore):
                 addresses=addresses,
                 use_tls=settings.VALKEY_USE_TLS,
                 credentials=ServerCredentials(password=settings.VALKEY_PASSWORD),
+                client_name="docsgpt_vector_store_client",
                 request_timeout=timeout,
             )
         else:
             config = GlideClientConfiguration(
                 addresses=addresses,
                 use_tls=settings.VALKEY_USE_TLS,
+                client_name="docsgpt_vector_store_client",
                 request_timeout=timeout,
             )
 
